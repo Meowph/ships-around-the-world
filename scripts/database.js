@@ -7,19 +7,19 @@ const database = {
   ],
 
   haulers: [
-      {id: 1, name: "", assignment:"Sea Besse", docking:"Shanghai, China"},
-      {id: 2, name: "", assignment:"Jane II", docking:"Busan, South Korea"},
-      {id: 3, name: "", assignment:"R.S.S Sea-Sick", docking:"Rotterdam, The Netherlands"},
-      {id: 4, name: "", assignment:"Mad Ship", docking:"Antwerp, Belgium"}
+      {id: 1, name: "Beaut-Hauler", assignment:"Sea Besse", docking:"Shanghai, China"},
+      {id: 2, name: "Snoodle-Hauler", assignment:"Jane II", docking:"Busan, South Korea"},
+      {id: 3, name: "Blue Sky-Hauler", assignment:"R.S.S Sea-Sick", docking:"Rotterdam, The Netherlands"},
+      {id: 4, name: "Starry-Hauler", assignment:"Mad Ship", docking:"Antwerp, Belgium"}
   ],
 
   shippingShips: [
-    {id:1, name:" ", assigned: " "},
-    {id:2, name:"Sea Besse", assigned: " "},
-    {id:3, name:"Jane II", assigned: " "},
-    {id:4, name:"R.S.S Sea-Sick", assigned: " "},
-    {id:5, name:"Mad Ship", assigned: " "},
-    {id:6, name:" ", assigned: " "},
+    {id:1, name:"WIIILSON!", assigned: "Zeerbra-Hauler"},
+    {id:2, name:"Sea Besse", assigned: "Beaut-Hauler"},
+    {id:3, name:"Jane II", assigned: "Snoodle-Hauler"},
+    {id:4, name:"R.S.S Sea-Sick", assigned: "Blue Sky-Hauler"},
+    {id:5, name:"Mad Ship", assigned: "Starry-Hauler"},
+    {id:6, name:"We're Gonna Need a Bigger Boat", assigned: "No Name-Hauler"},
   ]
 }
 
@@ -31,4 +31,9 @@ export const getDocks = () => {
 export const getHaulingShips = () => {
   // You write the code for copying the array and returning it
   return database.haulers.map(haulers => ({...haulers}))
+}
+
+export const getShippingShips = () => {
+  // You write the code for copying the array and returning it
+  return database.shippingShips.map(ships => ({...ships}))
 }

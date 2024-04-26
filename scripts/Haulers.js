@@ -17,5 +17,5 @@ export const getHaulingShips = () => {
 
     haulersHTM += "</ul>"
 
-    return haulersHTM
+    return haulersHTML
 }
