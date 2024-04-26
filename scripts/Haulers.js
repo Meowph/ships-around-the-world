@@ -15,7 +15,7 @@ export const getHaulingShips = () => {
         `
     }
 
-    haulersHTM += "</ul>"
+    haulersHTML += "</ul>"
 
     return haulersHTML
 }

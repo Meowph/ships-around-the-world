@@ -7,7 +7,7 @@ export const getShippingShips = () => {
     let shipsHTML = "<ul>"
 
     for (const ship of ships) {
-        // Convert each hauler object to an <li> and append to the haulersHTML string
+        // Convert each hauler object to an <li> and append to the shipsHTML string
         shipsHTML += 
         `<li>${ship.id}</li>
         <li>${ship.name}</li>
