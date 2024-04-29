@@ -1,9 +1,9 @@
 import { getShippingShips } from "./database.js"
 
-const ships = getShippingShips() //this stays outside of export {} if it needs to be accessed by more then one export. If not, if can either saty outside of {} or go inside them 
+const ships = shippingShips() //this stays outside of export {} if it needs to be accessed by more then one export. If not, if can either saty outside of {} or go inside them 
 
 
-export const shippingShips = () => {
+export const getShippingShips = () => {
     //const ships = getShippingShips()
 
     let shipsHTML = "<ul>"
