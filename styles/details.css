@@ -1,11 +1,25 @@
-.details {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
+ul {
+  list-style-type: none;
+}
+
+#container {
+display: flex;
+flex-direction: column;
 }
 
 .detail--column {
-  /*flex-basis: 24%;*/
-  margin: 0 2rem;
-  border: 1px dotted goldenrod;
+    flex-basis: 24%;
+    margin: 0 2rem;
+    margin-top: 50px;
+    border: 1px dotted white;
+}
+
+#ship-name {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+.assignments {
+  padding: 1rem 5rem;
 }

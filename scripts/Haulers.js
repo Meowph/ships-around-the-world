@@ -1,17 +1,17 @@
-import { getshippingShips } from "./CargoShip.js";
-import { getHaulingShips} from "./database.js"
+import { getHaulingShips, getShippingShips} from "./database.js"
 
 export const haulingShips = () => {
-
-    let haulersHTML = "<ul<h2>Hauling Ships</h2>"
     const haulers = getHaulingShips()
 
-    for (const hauler of haulers) {
+    let haulersHTML = "<ul>"
+
+    for (const haul of haulers) {
         // Convert each hauler object to an <li> and append to the haulersHTML string
         haulersHTML += 
         `
-        <li data-type="number" data-id="${hauler.id}">${hauler.name}</li>
-        <li>${hauler.docking}</li>
+        <li data-type="haulers" 
+        data-id="${haul.haukerId}">
+        ${haul.name}</li>
         `
     }
 
@@ -20,7 +20,7 @@ export const haulingShips = () => {
     return haulersHTML
 };
 
-hauler.innerHTML = haulingShips();
+//haul.innerHTML = haulingShips();
 
 
 document.addEventListener(
@@ -28,31 +28,28 @@ document.addEventListener(
     (clickEvent) => {
         const itemClicked = clickEvent.target
 
-        if (itemClicked.dataset.type === "number") {
-            const haulerId = itemClicked.dataset.id;
-            let shipCounter = 0;
-            const shippingShips = getshippingShips()
-
-            for (const ship of shippingShips) {
-                if (parseInt(haulerId) === ship.haulerId) {
-                    shipCounter++
-                }
-            }
-            window.alert(`This Hauler is currently carrying ${shipCounter} shipping ships`)
-    
-            }
-
         // Was a hauler list item clicked?
+        if (itemClicked.dataset.type === "haulers") {
+
 
             // Get the id of the hauler clicked
+                const haulerId = itemClicked.dataset.id
 
             // Start a counter variable at 0
+            let shipCounter = 0
 
             // Iterate all of the shipping ships
+            const shippingShips = getShippingShips ()
 
+            for (const ship of shippingShips) {
                 // Does the haulerId foreign key match the id?
+                if (parseInt(haulerId) === ship.haulerId) {
 
                     // Increase the counter by 1
-
+                    shipCounter++
+                }
+            }        
+                window.alert(`This hauler is carrying ${shipCounter} shipping ships`)
+        }
     }
 )

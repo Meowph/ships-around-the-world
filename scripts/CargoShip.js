@@ -1,9 +1,9 @@
 import { getShippingShips } from "./database.js"
 
-const ships = shippingShips() //this stays outside of export {} if it needs to be accessed by more then one export. If not, if can either saty outside of {} or go inside them 
+const ships = getShippingShips() //this stays outside of export {} if it needs to be accessed by more then one export. If not, if can either saty outside of {} or go inside them 
 
 
-export const getShippingShips = () => {
+export const shippingShips = () => {
     //const ships = getShippingShips()
 
     let shipsHTML = "<ul>"
@@ -12,8 +12,7 @@ export const getShippingShips = () => {
         // Convert each hauler object to an <li> and append to the shipsHTML string
         shipsHTML += 
         `
-        <li>${ship.name}</li>
-        <li>${ship.assigned}</li>
+        <li data-type="ships">${ship.name}</li>
         `
     }
 

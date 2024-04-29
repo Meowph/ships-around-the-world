@@ -7,19 +7,19 @@ const database = {
   ],
 
   haulers: [
-      {id: 1, name: "Beaut-Hauler", assignment:"Sea Besse", docking:"Shanghai, China"},
-      {id: 2, name: "Snoodle-Hauler", assignment:"Jane II", docking:"Busan, South Korea"},
-      {id: 3, name: "Blue Sky-Hauler", assignment:"R.S.S Sea-Sick", docking:"Rotterdam, The Netherlands"},
-      {id: 4, name: "Starry-Hauler", assignment:"Mad Ship", docking:"Antwerp, Belgium"}
+      {haulerId: 1, name: "Beaut-Hauler", cargoShips:"Sea Besse", dockId: 3},
+      {haulerId: 2, name: "Snoodle-Hauler", cargoShips:"Jane II", dockId:1},
+      {haulerId: 3, name: "Blue Sky-Hauler", cargoShips:"R.S.S Sea-Sick", dockId:4},
+      {haulerId: 4, name: "Starry-Hauler", cargoShips:"Mad Ship", dockId:2}
   ],
 
-  shippingShips: [
-    {id:1, name:"WIIILSON!", assigned: "Zeerbra-Hauler"},
-    {id:2, name:"Sea Besse", assigned: "Beaut-Hauler"},
-    {id:3, name:"Jane II", assigned: "Snoodle-Hauler"},
-    {id:4, name:"R.S.S Sea-Sick", assigned: "Blue Sky-Hauler"},
-    {id:5, name:"Mad Ship", assigned: "Starry-Hauler"},
-    {id:6, name:"We're Gonna Need a Bigger Boat", assigned: "No Name-Hauler"},
+  cargoShips: [
+    {cargoId:1, name:"WIIILSON!", haulerId: 4},
+    {cargoId:2, name:"Sea Besse", haulerId: 4},
+    {cargoId:3, name:"Jane II", haulerId: 1},
+    {cargoId:4, name:"R.S.S Sea-Sick", haulerId: 3},
+    {cargoId:5, name:"Mad Ship", haulerId: 3},
+    {cargoId:6, name:"We're Gonna Need a Bigger Boat", haulerId: 2},
   ]
 }
 
@@ -35,7 +35,7 @@ export const getHaulingShips = () => {
 
 export const getShippingShips = () => {
   // You write the code for copying the array and returning it
-  return database.shippingShips.map(ships => ({...ships}))
+  return database.cargoShips.map(ships => ({...ships}))
 }
 
-//Create taskId (foeeign key) for each array since they are connected by that data
+//Create taskId (foreign key) for each array since they are connected by that data
