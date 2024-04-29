@@ -37,3 +37,5 @@ export const getShippingShips = () => {
   // You write the code for copying the array and returning it
   return database.shippingShips.map(ships => ({...ships}))
 }
+
+//Create taskId (foeeign key) for each array since they are connected by that data

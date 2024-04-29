@@ -1,10 +1,11 @@
 .details {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: row;
 }
 
 .detail--column {
-  flex-basis: 24%;
+  /*flex-basis: 24%;*/
   margin: 0 2rem;
   border: 1px dotted goldenrod;
 }
