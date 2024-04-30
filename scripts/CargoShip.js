@@ -12,10 +12,11 @@ export const cargoShippingShips = () => {
         // Convert each hauler object to an <li> and append to the cargoHTML string
         cargoHTML += 
         `
-        <li data-type= "cargo"
+        <li 
+        data-type = "cargo"
         data-id = "${cargo.id}"
-        data-haulerId= "${cargo.haulerId}"
-         data-name= "${cargo.name}">
+        data-haulerId = "${cargo.haulerId}"
+         data-name = "${cargo.name}">
          ${cargo.name}</li>
         `;
     }

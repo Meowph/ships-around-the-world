@@ -1,4 +1,4 @@
-import { getDocks } from "./database.js"
+import { getDocks, getHaulingShips } from "./database.js"
 
 
 
@@ -11,7 +11,11 @@ export const DockList = () => {
         // Convert each dock object to an <li> and append to the docksHTML string
         docksHTML += 
         `
-        <li>${dock.location}</li>
+        <li 
+        data-type = "docks"
+        data-id = "${dock.id}"
+        data-haulerId = "${cargo.haulerId}"
+        >${dock.location}</li>
         <li>${dock.volume}</li>
         `
     }
@@ -20,3 +24,14 @@ export const DockList = () => {
 
     return docksHTML
 }
+
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
+
+        /*
+            Your job is to design an algorithm and implement it
+        */
+    }
+)
