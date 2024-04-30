@@ -14,7 +14,7 @@ export const DockList = () => {
         <li 
         data-type = "docks"
         data-id = "${dock.id}"
-        data-haulerId = "${cargo.haulerId}"
+        data-haulerId = "${dock.haulerId}"
         >${dock.location}</li>
         <li>${dock.volume}</li>
         `
@@ -33,5 +33,10 @@ document.addEventListener(
         /*
             Your job is to design an algorithm and implement it
         */
+       if (itemClicked.dataset.type === "docks") {
+        const dockId = parseInt(itemClicked.dataset.haulerId)
+
+        let dockPort = {""}
+       }
     }
 )

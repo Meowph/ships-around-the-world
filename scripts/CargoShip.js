@@ -34,7 +34,7 @@ document.addEventListener(
             
             if (itemClicked.dataset.type === "cargo") {  // Was a shipping ship list item clicked?
 
-                const cargoId = parseInt(itemClicked.dataset.haulerId) // Get the haulerId value of the shipping ship clicked
+                const cargoId = parseInt(itemClicked.dataset.haulerid) // Get the haulerId value of the shipping ship clicked
                 
                 let haulingShip = {name: "Incorrect"} // Define a default object for the found hauler
 
@@ -56,4 +56,4 @@ document.addEventListener(
 
 )
 
-//original issue was the data was showing up as incorrect because Cargo in database was labeled incorrectly. It was originaly cargoId, which is just needed to be id 
+//original issue was the data was showing up as incorrect because Cargo in database was labeled incorrectly. It was originally cargoId, which is just needed to be id 
