@@ -14,7 +14,7 @@ export const cargoShippingShips = () => {
         `
         <li data-type= "cargo"
         data-id = "${cargo.id}"
-        
+        data-haulerId= "${cargo.haulerId}"
          data-name= "${cargo.name}">
          ${cargo.name}</li>
         `;
@@ -33,7 +33,7 @@ document.addEventListener(
             
             if (itemClicked.dataset.type === "cargo") {  // Was a shipping ship list item clicked?
 
-                const cargoID = itemClicked.dataset.haulerid // Get the haulerId value of the shipping ship clicked
+                const cargoId = itemClicked.dataset.haulerId // Get the haulerId value of the shipping ship clicked
                 
                 let haulingShip = {name: "Incorrect"}; // Define a default object for the found hauler
 
@@ -41,9 +41,9 @@ document.addEventListener(
                
                 for (const hauler of haulers) {  
                     
-                    if (parseInt(cargoID) === hauler.id) { // Does the haulerId foreign key match the id of the current hauler?
+                    if ( parseInt(cargoId) === hauler.id) { // Does the haulerId foreign key match the id of the current hauler?
 
-                        haulingShip = hauler.id // Reassign the value of `haulingShip` to the current hauler
+                        haulingShip = hauler; // Reassign the value of `haulingShip` to the current hauler
 
                     }
                 }
