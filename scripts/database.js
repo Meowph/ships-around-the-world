@@ -13,11 +13,11 @@ const database = {
       {haulerId: 4, name: "Starry-Hauler", cargoShips:"Mad Ship", dockId:2}
   ],
 
-  cargoShips: [
+  cargo: [
     {cargoId:1, name:"WIIILSON!", haulerId: 4},
-    {cargoId:2, name:"Sea Besse", haulerId: 4},
+    {cargoId:2, name:"Sea Besse", haulerId: 2},
     {cargoId:3, name:"Jane II", haulerId: 1},
-    {cargoId:4, name:"R.S.S Sea-Sick", haulerId: 3},
+    {cargoId:4, name:"R.S.S Sea-Sick", haulerId: 4},
     {cargoId:5, name:"Mad Ship", haulerId: 3},
     {cargoId:6, name:"We're Gonna Need a Bigger Boat", haulerId: 2},
   ]
@@ -35,7 +35,7 @@ export const getHaulingShips = () => {
 
 export const getShippingShips = () => {
   // You write the code for copying the array and returning it
-  return database.cargoShips.map(ships => ({...ships}))
+  return database.cargo.map(ships => ({...ships}))
 }
 
 //Create taskId (foreign key) for each array since they are connected by that data

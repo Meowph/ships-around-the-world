@@ -1,5 +1,5 @@
 import { haulingShips } from "./Haulers.js"
-import { shippingShips } from "./CargoShip.js"
+import { cargoShippingShips } from "./CargoShip.js"
 import { DockList } from "./Docks.js"
 
 const mainContainer = document.querySelector("#container")
@@ -13,7 +13,7 @@ const applicationHTML = `
     </section>
     <section class="detail--column list">
         <h2>Shipping Ships</h2>
-        ${shippingShips()}
+        ${cargoShippingShips()}
     </section>
     <section class="detail--column list">
         <h2>Docks</h2>

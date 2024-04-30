@@ -10,7 +10,7 @@ export const haulingShips = () => {
         haulersHTML += 
         `
         <li data-type="haulers" 
-        data-id="${haul.haukerId}">
+        data-id="${haul.haulerId}">
         ${haul.name}</li>
         `
     }
@@ -29,21 +29,21 @@ document.addEventListener(
         const itemClicked = clickEvent.target
 
         // Was a hauler list item clicked?
-        if (itemClicked.dataset.type === "haulers") {
+        if (itemClicked.dataset.type === "hauler") {
 
 
             // Get the id of the hauler clicked
-                const haulerId = itemClicked.dataset.id
+                const haulerId = itemClicked.dataset.haulerid
 
             // Start a counter variable at 0
             let shipCounter = 0
 
             // Iterate all of the shipping ships
-            const shippingShips = getShippingShips ()
+            const cargoShips = getShippingShips ()
 
-            for (const ship of shippingShips) {
+            for (const cargo of cargoShips) {
                 // Does the haulerId foreign key match the id?
-                if (parseInt(haulerId) === ship.haulerId) {
+                if (parseInt(haulerId) === cargo.haulerId) {
 
                     // Increase the counter by 1
                     shipCounter++

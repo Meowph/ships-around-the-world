@@ -1,22 +1,56 @@
-import { getShippingShips } from "./database.js"
+import { getShippingShips, getHaulingShips } from "./database.js"
 
-const ships = getShippingShips() //this stays outside of export {} if it needs to be accessed by more then one export. If not, if can either saty outside of {} or go inside them 
+const cargos = getShippingShips() //this stays outside of export {} if it needs to be accessed by more then one export. If not, if can either saty outside of {} or go inside them 
 
 
-export const shippingShips = () => {
+export const cargoShippingShips = () => {
     //const ships = getShippingShips()
 
-    let shipsHTML = "<ul>"
+    let cargoHTML = "<ul>";
 
-    for (const ship of ships) {
-        // Convert each hauler object to an <li> and append to the shipsHTML string
-        shipsHTML += 
+    for (const cargo of cargos) {
+        // Convert each hauler object to an <li> and append to the cargoHTML string
+        cargoHTML += 
         `
-        <li data-type="ships">${ship.name}</li>
-        `
+        <li data-type= "cargo"
+        data-id = "${cargo.id}"
+        
+         data-name= "${cargo.name}">
+         ${cargo.name}</li>
+        `;
     }
 
-    shipsHTML += "</ul>"
+    cargoHTML += "</ul>";
 
-    return shipsHTML
-}
+    return cargoHTML;
+};
+
+
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
+            
+            if (itemClicked.dataset.type === "cargo") {  // Was a shipping ship list item clicked?
+
+                const cargoID = itemClicked.dataset.haulerid // Get the haulerId value of the shipping ship clicked
+                
+                let haulingShip = {name: "Incorrect"}; // Define a default object for the found hauler
+
+                const haulers = getHaulingShips() // Iterate the array of hauler objects
+               
+                for (const hauler of haulers) {  
+                    
+                    if (parseInt(cargoID) === hauler.id) { // Does the haulerId foreign key match the id of the current hauler?
+
+                        haulingShip = hauler.id // Reassign the value of `haulingShip` to the current hauler
+
+                    }
+                }
+                        // Show an alert to the user with this format...
+                        // Palais Royal is being hauled by Seawise Giant
+                        window.alert(`${itemClicked.dataset.name} is being hauled by ${haulingShip.name}`)
+            }
+    }
+
+)
