@@ -54,3 +54,5 @@ document.addEventListener(
     }
 
 )
+
+//original issue was the data was showing up as incorrect because Cargo in database was labeled incorrectly. It was originaly cargoId, which is just needed to be id 
