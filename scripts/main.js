@@ -17,7 +17,7 @@ const applicationHTML = `
     </section>
     <section class="detail--column list">
         <h2>Docks</h2>
-        ${DockList()}
+        ${DockList()} 
     </section>
 </article>
 `
