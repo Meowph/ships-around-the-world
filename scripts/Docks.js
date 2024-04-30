@@ -10,9 +10,9 @@ export const DockList = () => {
     let docksHTML = "<ul>"
 
     for (const location of locations) {
-    const dock = docks.find(dock => dock.location === location) // For finding the dock object with the matching location
-        // Convert each dock object to an <li> and append to the docksHTML string
+    const dock = docks.find(dock => dock.location === location) // For finding the dock object (object from array in database.js) with the matching location
 
+        // Convert each dock object to an <li> and append to the docksHTML string
         docksHTML += 
         `
         <li 
@@ -55,3 +55,12 @@ document.addEventListener(
        }
     }
 )
+
+
+/* Instructions:
+
+1. When a dock is clicked, present a message to the user that follows the format below if a hauler is currently at that dock.
+
+2. If there is no hauler at the dock, present the following message.
+
+3. If there is more than one hauler at the dock, present the following message.
