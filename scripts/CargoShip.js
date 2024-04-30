@@ -41,7 +41,7 @@ document.addEventListener(
                
                 for (const hauler of haulers) {  
                     
-                    if (parseInt(cargoId) === hauler.id) { // Does the haulerId foreign key match the id of the current hauler?
+                    if (cargoId === hauler.id) { // Does the haulerId foreign key match the id of the current hauler?
 
                         haulingShip = hauler; // Reassign the value of `haulingShip` to the current hauler
 
